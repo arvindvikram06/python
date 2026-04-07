@@ -3,7 +3,7 @@
 
 # Asyncio
 
-This document contains my learning notes on **Python asyncio**, including coroutines, tasks, futures, and event loop behavior.
+This section contains notes on **Python asyncio**, including coroutines, tasks, futures, and event loop behavior.
 
 ---
 
