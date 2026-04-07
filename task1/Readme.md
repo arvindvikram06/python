@@ -16,7 +16,7 @@ A web scraper built using **Python asyncio**, **Playwright**, and **SQLite3** to
 
 - **Anti-Detection Mechanisms**
   - Rotates **User Agents**
-  - Introduces **random delays** to mimic human behavior
+  - have **delays** to mimic human behavior
 
 - **Amazon Electronics Scraping**
   - Targets specific **electronics category**
