@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Rooms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login -->
+        <div id="login-screen" class="screen active">
+            <div class="login-container">
+                <h1>Chat Login</h1>
+                <input type="text" id="username-input" placeholder="Username">
+                <button id="login-button">Join Chat</button>
+            </div>
+        </div>
+
+        <div id="chat-screen" class="screen">
+            <!-- Sidebar for Rooms -->
+            <div class="sidebar left-sidebar">
+                <h2>Rooms</h2>
+                <div class="create-room">
+                    <input type="text" id="new-room-input" placeholder="New Room Name" />
+                    <button id="create-room-button">+</button>
+                </div>
+                <ul id="room-list"></ul>
+            </div>
+
+            <!-- Main Chat Area -->
+            <div class="chat-area">
+                <div class="chat-header">
+                    <h2 id="current-room-name">Select a Room</h2>
+                </div>
+                <div class="messages-container" id="messages">
+                    <div class="placeholder-msg">Join a room to start messaging...</div>
+                </div>
+                <div class="input-area hidden" id="message-input-area">
+                    <input type="text" id="message-input" placeholder="Type a message...">
+                    <button id="send-button">Send</button>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="sidebar right-sidebar">
+                <h2>Users here</h2>
+                <ul id="user-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
