@@ -1,15 +1,15 @@
 from database import execute
-from fields import Field
+from fields import Field, ForeignKey
 from query import QuerySet
 
 class Model:
     def __init__(self, **kwargs):
-        print("called model init")
+        # print("called  model init")
         self.id = kwargs.get("id")
 
         for key, attr in self.__class__.__dict__.items():
             if isinstance(attr, Field):
-                print(f"Field detected -> {key}")
+                # print(f"Field detected -> {key}")
 
                 setattr(self, key, kwargs.get(key))
 
@@ -38,15 +38,21 @@ class Model:
 
         for key, attr in self.__class__.__dict__.items():
             if isinstance(attr, Field):
-                fields.append(key)
-                values.append(getattr(self, key))  
+
+                if isinstance(attr, ForeignKey):
+                    fields.append(key + "_id")   
+                    values.append(getattr(self, attr.private_name, None))
+                else:
+                    fields.append(key)
+                    values.append(getattr(self, key))
+
                 placeholders.append("?")
 
         sql = "INSERT INTO " + table
         sql += " (" + ", ".join(fields) + ")"
         sql += " VALUES (" + ", ".join(placeholders) + ")"
 
-        print(sql)
+        print("SQL:", sql)
         cursor = execute(sql, values)
         self.id = cursor.lastrowid
 

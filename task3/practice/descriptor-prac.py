@@ -31,13 +31,13 @@ class User:
     name = CharField(10)
 
 
-# demo
-u = User()
-u.name = "Alice"
-print(u.name)
+# # demo
+# u = User()
+# u.name = "Alice"
+# print(u.name)
 
-# error case
-try:
-    u.name = "This is too long"
-except Exception as e:
-    print("Error:", e)
+# # error case
+# try:
+#     u.name = "This is too long"
+# except Exception as e:
+#     print("Error:", e)
