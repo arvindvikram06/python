@@ -3,11 +3,11 @@ import httpx
 
 async def forward_request(method,url,headers,body):
     async with httpx.AsyncClient() as Client:
-        response = await Client.reques(
+        response = await Client.request(
             method = method,
             url = url,
             headers = headers,
-            body = body
+            content = body
         )
         return response
 
