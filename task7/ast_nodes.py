@@ -27,3 +27,14 @@ class Assign:
 
     def __repr__(self):
         return f"{self.__class__.__name__}({self.__dict__})"
+
+class If:
+    def __init__(self, cond, then_branch, else_branch=None):
+        self.cond = cond
+        self.then_branch = then_branch
+        self.else_branch = else_branch
+
+
+class Block:
+    def __init__(self, statements):
+        self.statements = statements

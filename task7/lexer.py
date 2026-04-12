@@ -1,6 +1,13 @@
 import re
 
 TOKEN_SPEC = [
+    ("EQ", r'=='),
+    ("NE", r'!='),
+    ("LE", r'<='),
+    ("GE", r'>='),
+    ("LT", r'<'),
+    ("GT", r'>'),
+
     ("NUMBER", r'\d+'),
     ("IDENT", r'[a-zA-Z_][a-zA-Z0-9_]*'),
 
@@ -12,9 +19,13 @@ TOKEN_SPEC = [
     ("EQUAL", r'='),
     ("LPAREN", r'\('),
     ("RPAREN", r'\)'),
+    ("LBRACE", r'\{'),
+    ("RBRACE", r'\}'),
 
     ("WS", r'\s+'),
 ]
+
+KEYWORDS = {"if", "else"}
 
 def tokenize(code):
     tokens = []
@@ -22,15 +33,17 @@ def tokenize(code):
     while code:
         for name, pattern in TOKEN_SPEC:
             match = re.match(pattern, code)
-
             if match:
                 text = match.group(0)
                 code = code[len(text):]
-                if name != "WS":
-                    # print("not whitespace",name)
-                    tokens.append((name, text))
-                # else:
-                    # print("whitespace",name)
+
+                if name == "WS":
+                    break
+
+                if name == "IDENT" and text in KEYWORDS:
+                    name = text.upper()
+
+                tokens.append((name, text))
                 break
         else:
             raise Exception(f"Invalid token: {code}")
