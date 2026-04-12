@@ -27,10 +27,10 @@ def tokenize(code):
                 text = match.group(0)
                 code = code[len(text):]
                 if name != "WS":
-                    print("not whitespace",name)
+                    # print("not whitespace",name)
                     tokens.append((name, text))
-                else:
-                    print("whitespace",name)
+                # else:
+                    # print("whitespace",name)
                 break
         else:
             raise Exception(f"Invalid token: {code}")
