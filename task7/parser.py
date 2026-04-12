@@ -131,11 +131,28 @@ class Parser:
         if token[0] == "IF":
             return self.parse_if()
 
+        elif token[0] == "WHILE":
+            return self.parse_while()
+
         elif token[0] == "IDENT" and self.tokens[self.pos+1][0] == "EQUAL":
             return self.parse_assign()
 
         else:
             return self.parse_expr()
+
+    def parse_while(self):
+        self.log("parse_while")
+        self.depth += 1
+
+        self.eat("WHILE")
+        self.eat("LPAREN")
+        cond = self.parse_comparison()
+        self.eat("RPAREN")
+
+        body = self.parse_block()
+
+        self.depth -= 1
+        return While(cond, body)
 
     def parse(self):
         self.log("parse program")

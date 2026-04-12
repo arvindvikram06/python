@@ -3,12 +3,10 @@ from parser import Parser
 from interpreter import Interpreter
 
 code = """
-x = 10 + 20 * 5
+x = 0
 
-if (x > 50) {
+while (x < 5) {
     x = x + 1
-} else {
-    x = x - 1
 }
 """
 
@@ -24,3 +22,5 @@ interpreter = Interpreter()
 interpreter.eval(ast)
 
 print("\nFinal ENV:", interpreter.env)
+
+print("Output",interpreter.env["x"])

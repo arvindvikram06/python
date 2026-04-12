@@ -27,6 +27,17 @@ class Interpreter:
             self.depth -= 1
             self.log(f"Stored {node.name} = {value}")
             return value
+        
+        elif isinstance(node, While):
+            self.log("While loop start")
+            self.depth += 1
+
+            while self.eval(node.cond):
+                self.log("Loop iteration")
+                self.eval(node.body)
+
+            self.depth -= 1
+            self.log("While loop end")
 
         elif isinstance(node, BinOp):
             self.log(f"BinOp -> {node.op}")

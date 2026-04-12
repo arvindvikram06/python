@@ -25,7 +25,7 @@ TOKEN_SPEC = [
     ("WS", r'\s+'),
 ]
 
-KEYWORDS = {"if", "else"}
+KEYWORDS = {"if", "else","while"}
 
 def tokenize(code):
     tokens = []

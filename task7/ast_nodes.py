@@ -38,3 +38,8 @@ class If:
 class Block:
     def __init__(self, statements):
         self.statements = statements
+
+class While:
+    def __init__(self, cond, body):
+        self.cond = cond
+        self.body = body
