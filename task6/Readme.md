@@ -28,7 +28,7 @@ Client Request
 ↓
 [ Reverse Proxy ]
 ↓
-Downstream Microservices
+Microservices
 
 
 ##  Features
