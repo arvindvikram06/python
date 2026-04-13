@@ -17,17 +17,17 @@ This project demonstrates how real-world gateways manage traffic, improve perfor
 
 ---
 
-## 🔄 Request Flow
+## Request Flow
 Client Request
-↓
+->
 [ Rate Limiter ]
-↓
+->
 [ Cache (Redis) ]
-↓
+->
 [ Circuit Breaker ]
-↓
+->
 [ Reverse Proxy ]
-↓
+->
 Microservices
 
 
