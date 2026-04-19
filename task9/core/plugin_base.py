@@ -5,10 +5,12 @@ class PluginBase(ABC):
     version = "1.0.0"
     dependencies = []
 
-    @abstractmethod
-    def activate(self):
-        raise NotImplementedError
+    def __init__(self):
+        self.active = False
 
     @abstractmethod
+    def activate(self):
+        pass
+
     def deactivate(self):
-        pass    
+        pass
