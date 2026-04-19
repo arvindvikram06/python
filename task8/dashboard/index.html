@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sensor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <h2>Live Sensor Dashboard</h2>
+
+    <div class="container">
+        <canvas id="chart"></canvas>
+
+        <div class="info">
+            <p><b>Temperature:</b> <span id="temp">-</span></p>
+            <p><b>Moving Avg:</b> <span id="avg">-</span></p>
+            <p><b>Z-Score:</b> <span id="zscore">-</span></p>
+            <p><b>Status:</b> <span id="status">-</span></p>
+        </div>
+    </div>
+
+    <h3 id="alert"></h3>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

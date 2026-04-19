@@ -1,0 +1,22 @@
+body {
+    font-family: Arial;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+canvas {
+    margin-top: 20px;
+}
+
+.info {
+    margin-top: 20px;
+}
+
+#alert {
+    margin-top: 20px;
+    font-weight: bold;
+}
