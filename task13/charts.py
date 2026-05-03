@@ -14,5 +14,4 @@ def generate_bar_chart(region_data):
     plt.title("Revenue by Region")
     plt.savefig(path)
     plt.close()
-
     return path
