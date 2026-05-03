@@ -1,4 +1,4 @@
-# Simple Blockchain Implementation
+# Task 10: Simple Blockchain Implementation
 
 A functional blockchain prototype built in **Python** featuring Proof-of-Work (PoW), distributed nodes, wallet management, and secure transactions.
 

@@ -1,4 +1,4 @@
-# Custom Language Interpreter
+# Task 7: Custom Language Interpreter
 
 A custom interpreter built from scratch in **Python** to tokenize, parse, and execute a simple programming language featuring variables, arithmetic, and control flow.
 

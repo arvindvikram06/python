@@ -1,4 +1,4 @@
-# Plugin-based Static Site Generator
+# Task 9: Plugin-based Static Site Generator
 
 A modular static site generator built in **Python** that supports a robust plugin architecture with dependency resolution and lifecycle management.
 

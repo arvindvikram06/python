@@ -1,4 +1,4 @@
-# Distributed Task Queue
+# Task 4: Distributed Task Queue
 
 A lightweight distributed task queue built with **Python**, **Redis**, and **TCP sockets**. It supports delayed retries with exponential backoff, a dead letter queue, real-time events, and a CLI dashboard.
 

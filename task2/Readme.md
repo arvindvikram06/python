@@ -1,4 +1,4 @@
-# Real-Time Chat Server
+# Task 2: Real-Time Chat Server
 
 A lightweight real-time chat server built with **Python** using **WebSockets** and **AsyncIO**. It supports multiple chat rooms, private messaging, and persistent message history.
 

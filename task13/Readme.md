@@ -1,4 +1,4 @@
-# Automated Sales Report Generator
+# Task 13: Automated Sales Report Generator
 
 An end-to-end automation tool built in **Python** that fetches sales data from a database, processes it into metrics, generates visual charts, and compiles everything into a professional **PDF report**.
 

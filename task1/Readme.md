@@ -1,4 +1,4 @@
-# Webscrapper
+# Task 1: Asynchronous Multi-threaded Web Scraper
 
 A web scraper built using **Python asyncio**, **Playwright**, and **SQLite3** to track price changes in Amazon electronics products.
 

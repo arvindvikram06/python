@@ -1,4 +1,4 @@
-# Graph Database with Shortest Path
+# Task 12: Graph Database with Shortest Path
 
 A custom graph database implementation in **Python** featuring an interactive shell, Write-Ahead Logging (WAL) for persistence, and advanced pathfinding algorithms.
 

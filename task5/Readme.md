@@ -1,4 +1,4 @@
-# Customer Churn Prediction
+# Task 5: Machine Learning Pipeline with Feature Engineering
 
 A machine learning project to predict customer churn using the **Telco Customer Churn** dataset. It follows a complete end-to-end pipeline from data ingestion to model deployment.
 
