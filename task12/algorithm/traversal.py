@@ -35,7 +35,7 @@ def shortest_path(graph, start, end):
     if end not in parent and start != end:
         return []
 
-    # Reconstruct path (VERY IMPORTANT PART)
+    # Reconstruct path
     path = []
     curr = end
 

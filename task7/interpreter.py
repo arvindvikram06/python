@@ -1,87 +1,56 @@
 from ast_nodes import *
 
+# Executes the Abstract Syntax Tree (AST) recursively
 class Interpreter:
     def __init__(self):
+        # Variable storage (symbol table)
         self.env = {}
-        self.depth = 0
 
-    def log(self, msg):
-        print("  " * self.depth + msg)
-
+    # Main evaluation function
     def eval(self, node):
+        # Numbers: Return the raw value
         if isinstance(node, Number):
-            self.log(f"Number -> {node.value}")
             return node.value
 
+        # Variables: Lookup in environment
         elif isinstance(node, Var):
-            self.log(f"Var -> {node.name}")
             return self.env[node.name]
 
+        # Assignments: Eval value and store in environment
         elif isinstance(node, Assign):
-            self.log(f"Assign -> {node.name}")
-            self.depth += 1
-
             value = self.eval(node.value)
             self.env[node.name] = value
-
-            self.depth -= 1
-            self.log(f"Stored {node.name} = {value}")
             return value
         
+        # While loops: Continuous evaluation of condition and body
         elif isinstance(node, While):
-            self.log("While loop start")
-            self.depth += 1
-
             while self.eval(node.cond):
-                self.log("Loop iteration")
                 self.eval(node.body)
 
-            self.depth -= 1
-            self.log("While loop end")
-
+        # Binary Operations: Eval sides and apply operator
         elif isinstance(node, BinOp):
-            self.log(f"BinOp -> {node.op}")
-            self.depth += 1
-
             left = self.eval(node.left)
             right = self.eval(node.right)
 
-            if node.op == '+': result = left + right
-            elif node.op == '-': result = left - right
-            elif node.op == '*': result = left * right
-            elif node.op == '/': result = left / right
-            elif node.op == '<': result = left < right
-            elif node.op == '>': result = left > right
-            elif node.op == '<=': result = left <= right
-            elif node.op == '>=': result = left >= right
-            elif node.op == '==': result = left == right
-            elif node.op == '!=': result = left != right
+            if node.op == '+': return left + right
+            elif node.op == '-': return left - right
+            elif node.op == '*': return left * right
+            elif node.op == '/': return left / right
+            elif node.op == '<': return left < right
+            elif node.op == '>': return left > right
+            elif node.op == '<=': return left <= right
+            elif node.op == '>=': return left >= right
+            elif node.op == '==': return left == right
+            elif node.op == '!=': return left != right
 
-            self.log(f"Computed {left} {node.op} {right} = {result}")
-            self.depth -= 1
-            return result
-
+        # Blocks: Execute each statement in sequence
         elif isinstance(node, Block):
-            self.log("Block start")
-            self.depth += 1
-
             for stmt in node.statements:
                 self.eval(stmt)
 
-            self.depth -= 1
-            self.log("Block end")
-
+        # If Statements: Conditional branch execution
         elif isinstance(node, If):
-            self.log("If condition")
-            self.depth += 1
-
-            cond = self.eval(node.cond)
-
-            self.depth -= 1
-
-            if cond:
-                self.log("Then branch")
+            if self.eval(node.cond):
                 return self.eval(node.then_branch)
             elif node.else_branch:
-                self.log("Else branch")
                 return self.eval(node.else_branch)
